@@ -1,19 +1,17 @@
 // vite.config.js
 import {resolve} from 'path'
 import {defineConfig} from 'vite'
+import vue from '@vitejs/plugin-vue'
 
 export default defineConfig({
     build: {
         lib: {
-            entry: resolve(__dirname, 'src/index.js'),
+            entry: resolve(__dirname, 'src/main.js'),
             name: 'Vuetning',
-            fileName: 'vuetning'
+            fileName: (format) => `vuetning.${format}.js`,
         },
         minify: true,
-        optimizeDeps: {
-            include: [],
-            exclude: [],
-        },
+        plugins: [vue()],
         rollupOptions: {
             external: ['vue'],
             output: {

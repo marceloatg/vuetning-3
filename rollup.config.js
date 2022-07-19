@@ -6,7 +6,7 @@ import {terser} from 'rollup-plugin-terser'
 export default [
     {
         external: ['vue'],
-        input: 'src/index.js',
+        input: 'src/main.js',
         output: [
             // Keep the bundle as an ES module file
             {file: 'dist/vuetning.js', format: 'es'},

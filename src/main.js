@@ -1,4 +1,14 @@
-import { createApp } from 'vue'
-import App from './app.vue'
+import components from'./components/index'
 
-createApp(App).mount('#app')
+const plugin = {
+    install (Vue) {
+        for (const prop in components) {
+            if (components.hasOwnProperty(prop)) {
+                const component = components[prop]
+                Vue.component(component.name, component)
+            }
+        }
+    }
+}
+
+export default plugin

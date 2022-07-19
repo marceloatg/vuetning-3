@@ -16,10 +16,8 @@
     }
   },
   "scripts": {
-    "dev": "vite",
     "build": "vite build",
-    "bundle": "rollup -c --exports default",
-    "preview": "vite preview"
+    "rollup": "rollup -c --exports default"
   },
   "dependencies": {
     "vue": "^3.2.37"
