@@ -1,13 +1,13 @@
 import {resolve} from 'path'
 import {defineConfig} from 'vite'
-import vue from '@vitejs/plugin-vue'
+import Vue from '@vitejs/plugin-vue'
 
 export default defineConfig({
     build: {
         cssCodeSplit: true,
         lib: {
             entry: resolve(__dirname, 'src/main.js'),
-            fileName: (format) => `vuetning.${format}.js`,
+            formats:["umd"],
             name: 'Vuetning',
         },
         minify: 'esbuild',
@@ -20,5 +20,5 @@ export default defineConfig({
             },
         },
     },
-    plugins: [vue()],
-});
+    plugins: [Vue()],
+})
